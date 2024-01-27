@@ -1,15 +1,11 @@
-list1=[10,40,34,45,67]
-list1.reverse()
-print ("list1 is : ",list1)
+from flask import Flask, render_template
 
-list2=[24,45,67,93,53,75,25]
-list2.sort()
-print ("sort is : ",list2)
+app = Flask(__name__)
 
-list3=[]
-list3=list1.copy()
-print ("list3 : ",list3)
+@app.route('/')
+def home():
+    return render_template('index.html')
 
-myindex=list2[2:4]
-print ("my index number is : ",myindex)
+if __name__ == '__main__':
+    app.run(debug=True, host='0.0.0.0', port=5000)
 
